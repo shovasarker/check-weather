@@ -7,6 +7,13 @@ const getInputValue = (inputId) => {
   return cityName ? cityName : -1
 }
 
+const showElement = (elementId) => {
+  document.getElementById(elementId).classList.remove('d-none')
+}
+const hideElement = (elementId) => {
+  document.getElementById(elementId).classList.add('d-none')
+}
+
 const getFetchUrl = (serachText) => {
   return `https://api.openweathermap.org/data/2.5/weather?q=${serachText}&appid=${API_KEY}&units=metric`
 }
@@ -35,9 +42,13 @@ const displayData = (data) => {
   const iconUrl =
     temp && `https://openweathermap.org/img/wn/${temp.icon}@2x.png`
   document.getElementById('weather-image').setAttribute('src', iconUrl)
+  hideElement('spinner')
+  showElement('weather-container')
 }
 
 const fetchAndDisplayCityWeatherData = async (city) => {
+  showElement('spinner')
+  hideElement('weather-container')
   const url = getFetchUrl(city)
   const weatherData = await fetchData(url)
   displayData(weatherData)
