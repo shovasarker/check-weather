@@ -32,8 +32,9 @@ const displayData = (data) => {
   setInnerText('city-name', name ? name : NOT_FOUND)
   setInnerText('temperature', main ? main.temp : NOT_FOUND)
   setInnerText('weather-type', temp ? temp?.main : NOT_FOUND)
-  document.getElementById('weather-image').src =
+  const iconUrl =
     temp && `https://openweathermap.org/img/wn/${temp.icon}@2x.png`
+  document.getElementById('weather-image').setAttribute('src', iconUrl)
 }
 
 const checkWeather = async () => {
