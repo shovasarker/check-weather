@@ -8,7 +8,7 @@ const getInputValue = (inputId) => {
 }
 
 const getFetchUrl = (serachText) => {
-  return `http://api.openweathermap.org/data/2.5/weather?q=${serachText}&appid=${API_KEY}&units=metric`
+  return `https://api.openweathermap.org/data/2.5/weather?q=${serachText}&appid=${API_KEY}&units=metric`
 }
 
 const fetchData = async (url) => {
