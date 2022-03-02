@@ -1,41 +1,43 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <title>Temperature Hot</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <title>Temperature Hot</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        body {
-            background: url(images/bg-image.jpg) no-repeat;
-            background-size: cover;
-            height: 100vh;
-        }
-    </style>
-</head>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            body {
+                background: url(images/bg-image.jpg) no-repeat;
+                background-size: cover;
+                height: 100vh;
+            }
+        </style>
+        <script src="./js/index.js" defer></script>
+    </head>
 
-<body>
-    <div class="container">
-        <form class="col-md-6 m-auto py-5">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Enter a location for Weather ...">
-                <div class="input-group-append">
-                    <button type="button" class="btn btn-danger">Search</button>
+    <body>
+        <div class="container">
+            <form class="col-md-6 m-auto py-5">
+                <div class="input-group mb-3">
+                    <input id="city-name-field" type="text" class="form-control"
+                        placeholder="Enter a location for Weather ...">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-success" onclick="checkWeather()">Search</button>
+                    </div>
                 </div>
+            </form>
+            <div class="weather-status text-white text-center">
+                <img id="weather-image" src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+                <h1 id="city-name">Dhaka</h1>
+                <h3><span id="temperature">38.06</span>&deg;C</h3>
+                <h1 class="lead" id="weather-type">Clouds</h1>
             </div>
-        </form>
-        <div class="weather-status text-white text-center">
-            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
-            <h1>Dhaka</h1>
-            <h3><span>38.06</span>&deg;C</h3>
-            <h1 class="lead">Clouds</h1>
         </div>
-    </div>
 
-</body>
+    </body>
 
 </html>
