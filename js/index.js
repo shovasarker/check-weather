@@ -37,13 +37,13 @@ const displayData = (data) => {
   document.getElementById('weather-image').setAttribute('src', iconUrl)
 }
 
-const fetchAndDisplayCityWeatherData = (city) => {
+const fetchAndDisplayCityWeatherData = async (city) => {
   const url = getFetchUrl(city)
   const weatherData = await fetchData(url)
   displayData(weatherData)
 }
 
-const checkWeather = async () => {
+const checkWeather = () => {
   const city = getInputValue('city-name-field')
   if (city === -1) return
 
