@@ -30,8 +30,8 @@ const displayData = (data) => {
   const temp = weather && weather[0]
   const NOT_FOUND = 'Not Found'
   setInnerText('city-name', name ? name : NOT_FOUND)
-  setInnerText('temperature', main ? main.temp : NOT_FOUND)
   setInnerText('weather-type', temp ? temp?.main : NOT_FOUND)
+  setInnerText('temperature', main ? `${main.temp}°C` : NOT_FOUND)
   const iconUrl =
     temp && `https://openweathermap.org/img/wn/${temp.icon}@2x.png`
   document.getElementById('weather-image').setAttribute('src', iconUrl)
